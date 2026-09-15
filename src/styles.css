@@ -300,6 +300,40 @@ body {
   transform-origin: center;
 }
 
+/* Local color study: translucent rose and plum light above the films. */
+.opening-film::after,
+.details-page::before,
+.details-page::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+}
+
+.opening-film::after {
+  inset: -8%;
+  background:
+    radial-gradient(ellipse at 8% 20%, rgba(145, 67, 102, .48), transparent 54%),
+    radial-gradient(ellipse at 95% 78%, rgba(98, 75, 137, .48), transparent 52%),
+    radial-gradient(ellipse at 50% 43%, rgba(48, 27, 47, .32), transparent 70%);
+  filter: blur(28px);
+}
+
+.details-page::before {
+  z-index: 1;
+  inset: -10%;
+  background:
+    radial-gradient(ellipse at 0% 18%, rgba(189, 104, 136, .42), transparent 48%),
+    radial-gradient(ellipse at 100% 75%, rgba(130, 107, 171, .38), transparent 48%),
+    radial-gradient(ellipse at 12% 100%, rgba(211, 155, 127, .32), transparent 45%);
+  filter: blur(32px);
+}
+
+.details-page::after {
+  z-index: 1;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 44%, rgba(255, 248, 246, .5), transparent 70%);
+}
+
 .details-copy {
   position: absolute;
   inset: 0;
