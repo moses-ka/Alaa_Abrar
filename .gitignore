@@ -1,0 +1,7 @@
+node_modules/
+dist/
+work/
+outputs/
+public/flora/
+.DS_Store
+*.log

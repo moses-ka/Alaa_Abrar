@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500&display=swap');
+
+:root {
+  color-scheme: light;
+  --pearl: #fbfaf7;
+  --warm-white: #f7f3eb;
+  --champagne: #c9aa70;
+  --ink: #4b3d2c;
+  --muted: #8a775b;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { width: 100%; min-height: 100%; margin: 0; }
+
+body {
+  overflow: hidden;
+  background: var(--pearl);
+  color: var(--ink);
+  font-family: 'Noto Naskh Arabic', serif;
+}
+
+.invitation-site {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.invitation-page {
+  position: absolute;
+  inset: 0;
+  isolation: isolate;
+  width: 100%;
+  height: 100svh;
+  min-height: 580px;
+  overflow: hidden;
+  background: #bdb1a4;
+  opacity: 1;
+  transition: opacity 1.3s cubic-bezier(.22, 1, .36, 1);
+}
+
+.invitation-page--leaving {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.invitation-mark {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  text-align: center;
+  padding: 2rem;
+  color: #fffdf8;
+  text-shadow: 0 2px 16px rgba(30, 22, 16, .32);
+}
+
+.blur-reveal {
+  opacity: 0;
+  filter: blur(14px);
+  transform: translateY(12px) scale(.985);
+  animation: blur-reveal 1.35s cubic-bezier(.22, 1, .36, 1) forwards;
+  will-change: opacity, filter, transform;
+}
+
+.reveal-basmala { animation-delay: .15s; }
+.reveal-verse { animation-delay: 1.45s; }
+.reveal-host { animation-delay: 3.05s; }
+.reveal-blessing { animation-delay: 4.75s; }
+
+@keyframes blur-reveal {
+  0% { opacity: 0; filter: blur(14px); transform: translateY(12px) scale(.985); }
+  58% { opacity: .9; filter: blur(2px); }
+  100% { opacity: 1; filter: blur(0); transform: translateY(0) scale(1); }
+}
+
+.intro-block {
+  position: absolute;
+  top: clamp(1.35rem, 4.5vh, 3.6rem);
+  left: 1.5rem;
+  right: 1.5rem;
+  display: grid;
+  justify-items: center;
+  gap: 0;
+}
+
+.invitation-intro {
+  margin: 0;
+  color: #fffdf8;
+  font-family: 'Aref Ruqaa', serif;
+  font-size: clamp(1.35rem, 3.3vw, 1.95rem);
+  line-height: 1.55;
+}
+
+.invitation-lead {
+  margin: clamp(.85rem, 1.8vh, 1.2rem) 0;
+  color: rgba(255, 253, 248, .82);
+  font-size: clamp(.95rem, 2.2vw, 1.22rem);
+  line-height: 1.5;
+}
+
+.host-copy {
+  display: grid;
+  justify-items: center;
+  gap: 0;
+}
+
+.host-position {
+  position: absolute;
+  top: 43%;
+  left: 1.5rem;
+  right: 1.5rem;
+  display: grid;
+  place-items: center;
+  transform: translateY(-50%);
+}
+
+.host-name {
+  margin: 0;
+  color: #fff;
+  font-family: 'Aref Ruqaa', serif;
+  font-size: clamp(2.25rem, 5.8vw, 4.35rem);
+  font-weight: 700;
+  line-height: 1.12;
+  text-shadow: 0 3px 20px rgba(32, 23, 16, .38);
+}
+
+.invitation-body {
+  position: absolute;
+  top: 66%;
+  right: 50%;
+  bottom: auto;
+  display: grid;
+  justify-items: center;
+  width: min(90vw, 34rem);
+  transform: translate(50%, -50%);
+}
+
+.invitation-verse {
+  max-width: 33ch;
+  margin: clamp(.55rem, 1.3vh, .85rem) 0 clamp(.15rem, .6vh, .4rem);
+  color: rgba(255, 253, 248, .94);
+  font-family: 'Aref Ruqaa', serif;
+  font-size: clamp(1.04rem, 2.55vw, 1.38rem);
+  font-weight: 400;
+  line-height: 1.86;
+  text-wrap: balance;
+  text-shadow: 0 2px 14px rgba(31, 22, 15, .46);
+}
+
+.blessing-line {
+  margin: 0 0 .7rem;
+  color: #fff;
+  font-family: 'Aref Ruqaa', serif;
+  font-size: clamp(1rem, 2.45vw, 1.4rem);
+  line-height: 1.5;
+}
+
+.invitation-occasion {
+  max-width: 28ch;
+  margin: 0;
+  color: rgba(255, 253, 248, .9);
+  font-size: clamp(.98rem, 2.45vw, 1.38rem);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.couple-lockup {
+  direction: rtl;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: clamp(.85rem, 3vw, 1.65rem);
+  margin-top: calc(clamp(1.35rem, 3.4vh, 2.35rem) + 20px);
+}
+
+.person { display: grid; justify-items: center; gap: .08rem; min-width: 5.3rem; }
+.person span {
+  color: rgba(255, 253, 248, .78);
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: clamp(.86rem, 2vw, 1.06rem);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.principal-name {
+  display: block;
+  color: #fff;
+  font-family: 'Aref Ruqaa', serif;
+  font-size: clamp(2.65rem, 6.8vw, 5rem);
+  font-weight: 700;
+  line-height: 1;
+  text-shadow: 0 3px 22px rgba(30, 21, 15, .42);
+}
+
+.ceremony-note {
+  margin: .58rem 0 0;
+  color: rgba(255, 253, 248, .76);
+  font-size: clamp(.74rem, 1.7vw, .92rem);
+}
+
+.ceremony-date {
+  display: block;
+  margin-top: .02rem;
+  color: #fff;
+  font-family: 'Aref Ruqaa', serif;
+  font-size: clamp(1rem, 2.4vw, 1.35rem);
+}
+
+.ceremony-meta {
+  display: grid;
+  justify-items: center;
+  margin-top: clamp(1.15rem, 3vh, 2rem);
+}
+
+.location-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+  min-width: 9rem;
+  margin-top: 1.65rem;
+  padding: .5rem 1.1rem .56rem;
+  border: 1px solid rgba(255, 255, 255, .65);
+  border-radius: 999px;
+  background: rgba(32, 25, 20, .2);
+  color: #fff;
+  font: 500 clamp(.82rem, 1.9vw, .96rem)/1.2 'Noto Naskh Arabic', serif;
+  box-shadow: 0 5px 18px rgba(22, 17, 13, .14);
+  backdrop-filter: blur(7px);
+  opacity: .72;
+}
+
+.location-button svg {
+  width: .95rem;
+  height: .95rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+
+.couple-connector {
+  display: block;
+  padding-bottom: clamp(.85rem, 2.5vw, 1.25rem);
+  color: rgba(255, 253, 248, .82);
+  font-family: 'Aref Ruqaa', serif;
+  font-size: clamp(1.2rem, 2.8vw, 1.65rem);
+  line-height: 1;
+}
+
+.opening-film {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  background: #c8baaa;
+}
+
+.opening-film video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 56%;
+  transform: scale(1.12);
+  transform-origin: center 56%;
+}
+
+.details-page {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  width: 100%;
+  height: 100svh;
+  min-height: 580px;
+  overflow: hidden;
+  background: #eee9e0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 1.3s cubic-bezier(.22, 1, .36, 1), visibility 0s linear 1.3s;
+}
+
+.details-page--active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 1.3s cubic-bezier(.22, 1, .36, 1), visibility 0s;
+}
+
+.details-page video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.08);
+  transform-origin: center;
+}
+
+.details-copy {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  padding: clamp(2rem, 6vh, 4rem) 1.5rem;
+  text-align: center;
+  color: #584839;
+  text-shadow: 0 1px 12px rgba(255, 255, 255, .92);
+}
+
+.details-page .couple-lockup {
+  position: relative;
+  top: clamp(-3.2rem, -7vh, -2.1rem);
+  margin: 0 0 clamp(2.1rem, 6vh, 4rem);
+}
+
+.details-invitation {
+  position: absolute;
+  top: clamp(4.2rem, 11vh, 6.8rem);
+  left: 1.5rem;
+  right: 1.5rem;
+  margin: 0;
+  color: #594637;
+  font-family: 'Aref Ruqaa', serif;
+  font-size: clamp(1.08rem, 2.7vw, 1.48rem);
+  line-height: 1.6;
+  text-shadow: 0 2px 14px rgba(255, 255, 255, .94);
+}
+
+.details-page .person span {
+  color: rgba(83, 66, 50, .72);
+}
+
+.details-page .principal-name {
+  color: #594637;
+  font-size: clamp(3.15rem, 8vw, 5.7rem);
+  text-shadow: 0 2px 18px rgba(255, 255, 255, .95);
+}
+
+.details-page .couple-connector {
+  color: rgba(89, 70, 55, .72);
+}
+
+.details-page .ceremony-meta {
+  margin: 0;
+}
+
+.details-page .ceremony-note {
+  margin: 0;
+  color: rgba(73, 56, 42, .88);
+  font-size: clamp(1.08rem, 2.6vw, 1.38rem);
+  font-weight: 500;
+}
+
+.details-page .ceremony-date {
+  margin-top: .42rem;
+  color: #49382c;
+  font-size: clamp(1.55rem, 4vw, 2.15rem);
+  font-weight: 700;
+}
+
+.details-page .location-button {
+  margin-top: clamp(2.2rem, 6vh, 3.8rem);
+  border-color: rgba(95, 75, 57, .48);
+  background: rgba(255, 253, 248, .52);
+  color: #594637;
+  box-shadow: 0 8px 24px rgba(105, 86, 67, .1);
+  opacity: 1;
+}
+
+.details-reveal {
+  opacity: 0;
+  filter: blur(14px);
+  transform: translateY(12px) scale(.985);
+  will-change: opacity, filter, transform;
+}
+
+.details-page--active .details-reveal {
+  animation: blur-reveal 1.35s cubic-bezier(.22, 1, .36, 1) forwards;
+}
+
+.details-page--active .details-invitation { animation-delay: .25s; }
+.details-page--active .details-couple { animation-delay: 1.15s; }
+.details-page--active .details-meta { animation-delay: 2.3s; }
+.details-page--active .details-button { animation-delay: 3.15s; }
+
+@media (max-width: 680px) {
+  .invitation-mark { padding-inline: 1.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blur-reveal,
+  .details-reveal {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    animation: none;
+  }
+
+  .invitation-page,
+  .details-page { transition-duration: .01ms; }
+}
