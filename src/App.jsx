@@ -66,7 +66,7 @@ function App() {
           </div>
           <div className="ceremony-meta details-reveal details-meta">
             <p className="ceremony-note">وذلك بمشيئة الله تعالى</p>
-            <time className="ceremony-date" dateTime="2026-09-19">السبت ١٩ سبتمبر ٢٠٢٦</time>
+            <time className="ceremony-date" dateTime="2026-09-19">السبت ١٩ أيلول ٢٠٢٦</time>
           </div>
           <button className="location-button details-reveal details-button" type="button" disabled aria-label="سيتم إضافة موقع الحفل لاحقاً">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.1 6-11a6 6 0 1 0-12 0c0 5.9 6 11 6 11Z"/><circle cx="12" cy="10" r="2.2"/></svg>
